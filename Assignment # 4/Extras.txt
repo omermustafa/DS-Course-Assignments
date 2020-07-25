@@ -1,0 +1,31 @@
+        //Traversing & linking with respect to string (Ascending order)
+                for(int k=0; k<size; k++)
+                {
+                    if(first1 == NULL)
+                        first1 = n;
+                    else{
+                        Node * prev = NULL;
+                        Node * curr = first1;
+                        while(curr->getdata1() < d1[0] && curr->getNext1() != NULL){
+                            prev = curr;
+                            curr = curr->getNext1();
+                        }
+                        if(prev == NULL){
+                            //Insert at beginning
+                            n->setNext1(first1);
+                            first1 = n;
+                            cout << "Inside begining";
+                        }
+                        else if(curr->getNext1() == NULL){
+                            //Insert at the End
+                            prev->setNext1(n);
+                            cout << "Inside At the End";
+                        }
+                        else if(prev != NULL && curr != NULL){
+                            //Insert at the mid
+                            n->setNext1(curr);
+                            prev->setNext1(n);
+                            cout << "Inside at the mid";
+                        }
+                    }
+                }
